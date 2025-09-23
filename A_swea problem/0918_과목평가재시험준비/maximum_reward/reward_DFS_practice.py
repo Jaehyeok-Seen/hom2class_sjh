@@ -1,35 +1,37 @@
 import sys
 sys.stdin = open('input (1).txt')
 
-def DFS(list, cnt):
-    global max_value
-    if cnt <= 0:
-        max_value = max(max_value, int(''.join(list)))
+
+def DFS(price_list, limit_cnt):
+    global max_price
+    if limit_cnt == 0:
+        final_price = int("".join(price_list))
+        max_price = max(max_price, final_price )
         return
 
-    state = (''.join(list),cnt)
 
+    state = (''.join(price_list),limit_cnt)
     if state in visited:
         return
     visited.add(state)
 
-    n = len(list)
-
-    for i in range(n):
-        for j in range(i+1,n):
-            if list[i] == list[j]:
+    for i in range(len(price_list)):
+        for j in range(i+1,len(price_list)):
+            if price_list[i] == price_list[j]:
                 continue
-            list[i],list[j] = list[j],list[i]
-            DFS(list,cnt-1)
-            list[i],list[j] = list[j],list[i]
+            price_list[i],price_list[j] =price_list[j],price_list[i]
+            DFS(price_list,limit_cnt-1)
+            price_list[i], price_list[j] = price_list[j], price_list[i]
 
-T=int(input())
+    return
+
+T= int(input())
 for tc in range(1,T+1):
-    price, limit_cnt = input().split()
-    num_list = list(price)
-    limit_cnt = int(limit_cnt)
+    information = list(map(int,input().split()))
+    price_list = list(str(information[0]))
+    limit = information[1]
 
-    max_value = 0
+    max_price = 0
     visited = set()
-    DFS(num_list,limit_cnt)
-    print(f'#{tc} {max_value}')
+    DFS(price_list,limit)
+    print(f'#{tc} {max_price}')
