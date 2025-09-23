@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+  .card {
+  display: block;
+  border: 1px solid black;
+  padding: 20px;
+  width: 300px;
+
+  }
+  .porfile-img{
+    font-size: 0px;
+  }
+  .profile-container{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    z-index: 1;
+    font-size: 0;
+  }
+
+  .profile-name {
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  border: 1px rgba(241, 160, 11, 0.825);
+  background-color: rgba(241, 160, 11, 0.825);
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 4%;
+  margin: 0;
+  z-index: 2;
+  line-height: 1;
+}
+.profile-container img {
+  width: 100%
+}
+  
+  
+  </style>
+</head>
+
+<body>
+  <div class="card" >
+    <div class="profile-container">
+      <img class="profile-img" src="profile.jpg" alt="Profile Image">
+      <p class="profile-name">Name</p>
+    </div>
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde officiis ad nostrum. Laboriosam mollitia similique provident fuga tenetur saepe sit, amet eaque neque eius quaerat expedita ea illum veniam.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+arr = [5, 1, 4, 2, 8]
+
+n = len(arr)
+for i in range(n):
+    for j in range(i):
+        if arr[j] > arr[j+1]:
+        # 오름차순으로 정렬하기 위함인데 고치기 전형태는 그 반대인 내림차순으로 정렬하는 형태가 되버린다.
+            arr[j], arr[j+1] = arr[j+1], arr[j]
+            # 위치를 바꿀 때는 비교연산자 ==가 아닌 =로 바꿔야한다.
+
+print(arr)
