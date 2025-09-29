@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>INDEX PAGE</h1>
+  {% comment %} app_name:path_name {% endcomment %}
+  <a href="{% url "articles:create" %}">CREATE</a>
+  <!-- HTML 문법으로는 뭐... views에서 넘겨준 변수? 그런거 쓸 수 없음! -->
+  {% comment %} 
+    {%  %} -> 기능
+    {{  }} -> 값
+  {% endcomment %}
+  <p>{{ articles }}</p>
+  <ul>
+    {% for article in articles %}
+    <li>
+        <span>{{ article.title }}</span> <br>
+        <span>{{ article.content }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
