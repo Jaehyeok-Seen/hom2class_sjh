@@ -27,8 +27,6 @@ for tc in range(1,T+1):
     N, B = map(int,input().split())
     H = list(map(int,input().split()))
 
-
-
     #H의 조합으로 더해진 합을 담을 그릇
     min_height = float('inf')
 

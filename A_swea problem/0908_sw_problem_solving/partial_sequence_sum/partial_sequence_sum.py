@@ -18,7 +18,6 @@ def dfs(start_idx, curr_sum):
     return (dfs(start_idx + 1, curr_sum) +
             dfs(start_idx + 1, curr_sum + num_list[start_idx]))
 
-
 T = int(input())
 for tc in range(1, T + 1):
     N, K = map(int, input().split())
@@ -26,3 +25,4 @@ for tc in range(1, T + 1):
 
     result = dfs(0, 0)
     print(f'#{tc} {result}')
+

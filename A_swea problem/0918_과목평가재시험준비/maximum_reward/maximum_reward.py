@@ -22,7 +22,7 @@ def DFS(num_list, cnt):
             # 앞에서부터 비교해서 자리 바꾸기
             if num_list[i] == num_list[j]:
                 continue
-
+            # 똑같지 않다면 유의미, 자리 바꾸고 + 재귀 + 백트래킹
             num_list[i],num_list[j] = num_list[j],num_list[i]
             DFS(num_list, cnt-1)
             num_list[i],num_list[j] = num_list[j],num_list[i]
