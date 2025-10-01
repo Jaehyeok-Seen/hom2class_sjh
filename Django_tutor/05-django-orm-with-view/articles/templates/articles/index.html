@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>메인 페이지</h1>
-  <a href="{% url "articles:new" %}">NEW</a>
+  <a href="{% url 'articles:new' %}">NEW</a>
   <hr>
   {% comment %} 전체 게시글 출력 {% endcomment %}
   {% for article in articles %}
@@ -15,6 +15,10 @@
       <p>글 번호: {{ article.pk }}</p>
       <p>
         글 제목: <a href="{% url "articles:detail" article.pk %}">{{ article.title }}</a>
+        {% comment %} 그냥 "앱이름:페이지이름"만 햇을때 noreversematch 오류 
+        그렇기 때문에 변수명 <int:pk>/ 이게 같이 들어와야하는데 어떻게 넣냐
+        공백을 주고 article 에 .을 통해서 준다.
+        {% endcomment %}
       </p>
       <p>글 내용: {{ article.content }}</p>
     </div>

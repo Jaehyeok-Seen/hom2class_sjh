@@ -7,18 +7,14 @@
 </head>
 <body>
   <h1>Detail</h1>
-  <h2>{{ article.pk }} 번째 글</h2>
+  <h2>{{ article.pk }}번째 글</h2>
   <hr>
   <p>제목: {{ article.title }}</p>
-  <p>내용: {{ article.content }}</p>
-  <p>작성일: {{ article.created_at }}</p>
-  <p>수정일: {{ article.updated_at }}</p>
+  <p>내용:{{ article.content }}</p>
+  <p>작성 시간:{{ article.created_at }}</p>
+  <p>수정 시간:{{ article.updated_at }}</p>
   <hr>
-  <a href="{% url "articles:edit" article.pk %}">수정하기</a><br>
-  <form action="{% url "articles:delete" article.pk %}" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="삭제하기">
-  </form>
   <a href="{% url "articles:index" %}">[메인 페이지로]</a>
+  {% comment %} #우리는 이제 주소를 외우지 않기로 했다. url을 눌러서 불러오고 앱이름,url이름을 index로 지어둠 {% endcomment %}
 </body>
 </html>
