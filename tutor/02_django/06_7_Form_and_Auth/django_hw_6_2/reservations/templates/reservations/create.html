@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <h1>CREATE PAGE</h1>
+  <!-- 지금 이 요청은 조회가 아니라 생성이다. 생성으로 요청을 보내야 한다. -->
+  <form action="{% url "reservations:create" %}" method='POST'>
+    {% csrf_token %}
+    <!-- 아...! 어디로 요청보내는지 안적었다. 버튼만 가지곤 안된다., -->
+    {{ reservation_form }}
+    <input type="submit" value="예약">
+  </form>  
+{% endblock content %}
